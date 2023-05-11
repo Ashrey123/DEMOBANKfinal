@@ -36,7 +36,7 @@ public class banktest1 extends bankbase1
 		  }
 		  @BeforeTest
 			public void x() {
-				extent=new ExtentReports("D:\\workspace\\XyzBank\\reports\\Bank.html",true);	
+				extent=new ExtentReports("D:\\workspace\\XyzBank2\\reports\\BankFinal.html",true);	
 			}
         @AfterTest
 			public void y() {
@@ -247,7 +247,7 @@ public class banktest1 extends bankbase1
 				}
 				else 
 				{
-					test.log(LogStatus.FAIL, "User is not able to Open a Bank Account **********");
+					test.log(LogStatus.FAIL, "User is not able to Open a Bank Account **abc**");
 				}
 					Assert.assertEquals(actual, expected);
 			}
