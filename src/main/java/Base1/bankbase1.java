@@ -17,17 +17,17 @@ public class bankbase1
 	
 	public void bankintilization() throws IOException, InterruptedException
 	{
-		try
-		{
-		FileInputStream fs= new FileInputStream("D:\\workspace\\XyzBank\\BankConfrigration.properties");
-		prop=new Properties();
-		prop.load(fs);
-		}
-		
-		catch(FileNotFoundException e)
-		{
-			System.out.println("File Not Available");
-		}
+//		try
+//		{
+//		FileInputStream fs= new FileInputStream("D:\\workspace\\XyzBank\\BankConfrigration.properties");
+//		prop=new Properties();
+//		prop.load(fs);
+//		}
+//		
+//		catch(FileNotFoundException e)
+//		{
+//			System.out.println("File Not Available");
+//		}
 		 WebDriverManager.chromedriver().setup();
 			ChromeOptions chromeOptions = new ChromeOptions();
 		    chromeOptions.addArguments("--remote-allow-origins=*","ignore-certificate-errors");
@@ -37,7 +37,8 @@ public class bankbase1
 		      chromeOptions.addArguments("use-fake-ui-for-media-stream"); 
 		      
 		
-	    driver.get(prop.getProperty("bankurl"));
+//	    driver.get(prop.getProperty("bankurl"));
+	    driver.get("https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login");
 	    
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	    driver.manage().window().maximize();
