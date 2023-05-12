@@ -2,64 +2,64 @@
 <testng-results ignored="0" total="10" passed="10" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-05-11T17:50:52 IST" name="Surefire suite" finished-at="2023-05-11T17:51:31 IST" duration-ms="38638">
+  <suite started-at="2023-05-12T15:02:07 IST" name="Surefire suite" finished-at="2023-05-12T15:02:45 IST" duration-ms="38228">
     <groups>
     </groups>
-    <test started-at="2023-05-11T17:50:52 IST" name="Surefire test" finished-at="2023-05-11T17:51:31 IST" duration-ms="38638">
+    <test started-at="2023-05-12T15:02:07 IST" name="Surefire test" finished-at="2023-05-12T15:02:45 IST" duration-ms="38228">
       <class name="TEST.banktest1">
-        <test-method is-config="true" signature="x()[pri:0, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:50:52 IST" name="x" finished-at="2023-05-11T17:50:52 IST" duration-ms="167" status="PASS">
+        <test-method is-config="true" signature="x()[pri:0, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:07 IST" name="x" finished-at="2023-05-12T15:02:07 IST" duration-ms="160" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- x -->
-        <test-method is-config="true" signature="launch()[pri:0, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:50:52 IST" name="launch" finished-at="2023-05-11T17:50:57 IST" duration-ms="4820" status="PASS">
+        <test-method is-config="true" signature="launch()[pri:0, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:07 IST" name="launch" finished-at="2023-05-12T15:02:13 IST" duration-ms="5108" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launch -->
-        <test-method signature="logo_displaycheck()[pri:1, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:50:57 IST" name="logo_displaycheck" finished-at="2023-05-11T17:50:58 IST" duration-ms="714" status="PASS">
+        <test-method signature="logo_displaycheck()[pri:1, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:13 IST" name="logo_displaycheck" finished-at="2023-05-12T15:02:14 IST" duration-ms="1092" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logo_displaycheck -->
-        <test-method signature="Customerlogin()[pri:2, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:50:58 IST" name="Customerlogin" finished-at="2023-05-11T17:51:01 IST" duration-ms="3090" status="PASS">
+        <test-method signature="Customerlogin()[pri:2, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:14 IST" name="Customerlogin" finished-at="2023-05-12T15:02:17 IST" duration-ms="3088" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Customerlogin -->
-        <test-method signature="user_login_check()[pri:3, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:01 IST" name="user_login_check" finished-at="2023-05-11T17:51:03 IST" depends-on-methods="TEST.banktest1.Customerlogin" duration-ms="2288" status="PASS">
+        <test-method signature="user_login_check()[pri:3, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:17 IST" name="user_login_check" finished-at="2023-05-12T15:02:19 IST" depends-on-methods="TEST.banktest1.Customerlogin" duration-ms="2248" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- user_login_check -->
-        <test-method signature="deposit_ch()[pri:4, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:03 IST" name="deposit_ch" finished-at="2023-05-11T17:51:07 IST" depends-on-methods="TEST.banktest1.user_login_check" duration-ms="3301" status="PASS">
+        <test-method signature="deposit_ch()[pri:4, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:19 IST" name="deposit_ch" finished-at="2023-05-12T15:02:22 IST" depends-on-methods="TEST.banktest1.user_login_check" duration-ms="2636" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- deposit_ch -->
-        <test-method signature="withdrwal_ch()[pri:5, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:07 IST" name="withdrwal_ch" finished-at="2023-05-11T17:51:11 IST" depends-on-methods="TEST.banktest1.deposit_ch" duration-ms="4276" status="PASS">
+        <test-method signature="withdrwal_ch()[pri:5, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:22 IST" name="withdrwal_ch" finished-at="2023-05-12T15:02:26 IST" depends-on-methods="TEST.banktest1.deposit_ch" duration-ms="4263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- withdrwal_ch -->
-        <test-method signature="transaction_check()[pri:6, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:11 IST" name="transaction_check" finished-at="2023-05-11T17:51:15 IST" depends-on-methods="TEST.banktest1.user_login_check" duration-ms="4170" status="PASS">
+        <test-method signature="transaction_check()[pri:6, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:26 IST" name="transaction_check" finished-at="2023-05-12T15:02:30 IST" depends-on-methods="TEST.banktest1.user_login_check" duration-ms="4141" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- transaction_check -->
-        <test-method signature="home_check_button()[pri:7, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:15 IST" name="home_check_button" finished-at="2023-05-11T17:51:17 IST" depends-on-methods="TEST.banktest1.transaction_check" duration-ms="2107" status="PASS">
+        <test-method signature="home_check_button()[pri:7, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:30 IST" name="home_check_button" finished-at="2023-05-12T15:02:32 IST" depends-on-methods="TEST.banktest1.transaction_check" duration-ms="2081" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- home_check_button -->
-        <test-method signature="bankmanagercheck()[pri:8, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:17 IST" name="bankmanagercheck" finished-at="2023-05-11T17:51:19 IST" duration-ms="2075" status="PASS">
+        <test-method signature="bankmanagercheck()[pri:8, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:32 IST" name="bankmanagercheck" finished-at="2023-05-12T15:02:34 IST" duration-ms="2071" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- bankmanagercheck -->
-        <test-method signature="OpenBankAccount()[pri:9, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:19 IST" name="OpenBankAccount" finished-at="2023-05-11T17:51:25 IST" depends-on-methods="TEST.banktest1.bankmanagercheck" duration-ms="5766" status="PASS">
+        <test-method signature="OpenBankAccount()[pri:9, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:34 IST" name="OpenBankAccount" finished-at="2023-05-12T15:02:40 IST" depends-on-methods="TEST.banktest1.bankmanagercheck" duration-ms="5761" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- OpenBankAccount -->
-        <test-method signature="BankCustomerList_Check()[pri:10, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:25 IST" name="BankCustomerList_Check" finished-at="2023-05-11T17:51:27 IST" depends-on-methods="TEST.banktest1.bankmanagercheck" duration-ms="2069" status="PASS">
+        <test-method signature="BankCustomerList_Check()[pri:10, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:40 IST" name="BankCustomerList_Check" finished-at="2023-05-12T15:02:42 IST" depends-on-methods="TEST.banktest1.bankmanagercheck" duration-ms="2078" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- BankCustomerList_Check -->
-        <test-method is-config="true" signature="Bnd()[pri:0, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:27 IST" name="Bnd" finished-at="2023-05-11T17:51:31 IST" duration-ms="3323" status="PASS">
+        <test-method is-config="true" signature="Bnd()[pri:0, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:42 IST" name="Bnd" finished-at="2023-05-12T15:02:45 IST" duration-ms="3227" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Bnd -->
-        <test-method is-config="true" signature="y()[pri:0, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-11T17:51:31 IST" name="y" finished-at="2023-05-11T17:51:31 IST" duration-ms="410" status="PASS">
+        <test-method is-config="true" signature="y()[pri:0, instance:TEST.banktest1@4d5b6aac]" started-at="2023-05-12T15:02:45 IST" name="y" finished-at="2023-05-12T15:02:45 IST" duration-ms="214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- y -->

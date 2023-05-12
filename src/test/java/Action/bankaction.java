@@ -29,14 +29,16 @@ public void deposi_ch()
 {
 	
 	callui.deposit_ch().click();
-	callui.depositamount().sendKeys(prop.getProperty("amount"));
+	//callui.depositamount().sendKeys(prop.getProperty("amount"));
+	callui.depositamount().sendKeys("10000");
 	callui.confirmamount().click();
 }
 public void withdraw_ch() throws InterruptedException
 {
 	callui.withdrwar().click();
 	Thread.sleep(2000);
-	callui.withdrwar_amount().sendKeys(prop.getProperty("withamount"));
+//	callui.withdrwar_amount().sendKeys(prop.getProperty("withamount"));
+	callui.withdrwar_amount().sendKeys("500");
 	callui.withdrwar_conf().click();
 }
 public void home() 
