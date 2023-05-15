@@ -59,10 +59,43 @@ WebElement open;
 @FindBy(xpath="//button[@type='submit']")
 WebElement confaccount;
 
+@FindBy(xpath="//button[@ng-click='addCust()']")
+WebElement addcu;
 
+@FindBy(xpath="//input[@placeholder='First Name']")
+WebElement entername;
+
+@FindBy(xpath="//input[@placeholder='Last Name']")
+WebElement lastname;
+
+@FindBy(xpath="//input[@placeholder='Post Code']")
+WebElement postal;
+
+@FindBy(xpath="//button[@type='submit']")
+WebElement confcus;
 public bankui1()
 {
 	PageFactory.initElements(driver, this);
+}
+public WebElement addcusbt_ch()
+{
+	return confcus;
+}
+public WebElement postalcode_ch()
+{
+	return postal;
+}
+public WebElement lastna_ch()
+{
+	return lastname;
+}
+public WebElement enterna_ch()
+{
+	return entername;
+}
+public WebElement addcust_ch()
+{
+	return addcu;
 }
 public WebElement confirmAccountbt_ch()
 {

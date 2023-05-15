@@ -5,12 +5,20 @@
     <classes>
       <class name="TEST.banktest1">
         <methods>
+          <include name="Customerlogin"/>
+          <include name="home_check_button"/>
           <include name="bankmanagercheck"/>
-          <include name="BankCustomberList_Check"/>
-          <include name="Bnd"/>
-          <include name="x"/>
-          <include name="y"/>
+          <include name="deposit_ch"/>
+          <include name="add_custmober"/>
           <include name="launch"/>
+          <include name="BankCustomerList_Check"/>
+          <include name="OpenBankAccount"/>
+          <include name="Bnd"/>
+          <include name="user_login_check"/>
+          <include name="x"/>
+          <include name="transaction_check"/>
+          <include name="y"/>
+          <include name="withdrwal_ch"/>
         </methods>
       </class> <!-- TEST.banktest1 -->
     </classes>

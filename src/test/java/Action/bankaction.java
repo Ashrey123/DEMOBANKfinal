@@ -62,6 +62,16 @@ public void open_bank_account() throws InterruptedException
 	Thread.sleep(3000);
 	driver.switchTo().alert().accept();
 }
+public void add_cust() throws InterruptedException
+{
+	callui.addcust_ch().click();
+	callui.enterna_ch().sendKeys("Sahil");
+	callui.lastna_ch().sendKeys("Akkal");
+	callui.postalcode_ch().sendKeys("160059");
+	Thread.sleep(3000);
+	callui.addcusbt_ch().click();
+	driver.switchTo().alert().accept();
+}
 
 
 }

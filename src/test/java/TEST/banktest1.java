@@ -209,7 +209,7 @@ public class banktest1 extends bankbase1
 					Assert.assertEquals(actual, expected);
 			}
 			
-			@Test(priority=10,dependsOnMethods="bankmanagercheck")
+			@Test(priority=11,dependsOnMethods="bankmanagercheck")
 			public void BankCustomerList_Check() throws InterruptedException
 			{
 				
@@ -251,8 +251,30 @@ public class banktest1 extends bankbase1
 				}
 					Assert.assertEquals(actual, expected);
 			}
+			@Test(priority=10,dependsOnMethods="bankmanagercheck")
+			public void add_custmober() throws InterruptedException
+			{
 				
-				
+				test=extent.startTest("Verify user is able to add new customer or nor");
+				   test.log(LogStatus.INFO, "clicking on add customer button");
+				   test.log(LogStatus.INFO,"Filling the account details");
+				   callaction.add_cust();
+					Thread.sleep(2000);
+					String actual = driver.getCurrentUrl();
+					String expected= "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/manager/addCust";
+					if(actual.equals(expected))
+					{
+					test.log(LogStatus.PASS, "User is able to add a new customer");
+				}
+				else 
+				{
+					test.log(LogStatus.FAIL, "User is not able to add a new customer");
+				}
+					Assert.assertEquals(actual, expected);
 			}
+			}
+				
+				
+			
 
 
