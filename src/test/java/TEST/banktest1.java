@@ -36,7 +36,7 @@ public class banktest1 extends bankbase1
 		  }
 		  @BeforeTest
 			public void x() {
-				extent=new ExtentReports("D:\\workspace\\XyzBank2\\reports\\BankFinal.html",true);	
+				extent=new ExtentReports("./reports\\BankFinal.html",true);	
 			}
         @AfterTest
 			public void y() {
