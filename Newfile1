@@ -1,0 +1,81 @@
+from flask import Flask, render_template, request
+
+import pandas as pd
+
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder
+
+from sklearn.model_selection import train_test_split
+
+from sklearn.linear_model import LogisticRegression
+
+from sklearn.metrics import accuracy_score
+
+app = Flask(__name__)
+
+@app.route('/', methods=['GET', 'POST'])
+
+def home():
+
+    if request.method == 'POST':
+
+        dataset = request.files['dataset']
+
+        if dataset:
+
+            # Load the dataset
+
+            data = pd.read_csv(dataset)
+
+            # Preprocessing
+
+            label_encoder = LabelEncoder()
+
+            data['positive_feedback'] = label_encoder.fit_transform(data['positive_feedback'])
+
+            categorical_features = ['skills', 'reviews']
+
+            one_hot_encoder = OneHotEncoder(sparse=False, handle_unknown='ignore')
+
+            one_hot_encoded = one_hot_encoder.fit_transform(data[categorical_features])
+
+            # Create a DataFrame with the one-hot encoded features
+
+            encoded_df = pd.DataFrame(one_hot_encoded, columns=one_hot_encoder.get_feature_names(categorical_features))
+
+            # Concatenate the encoded features with the remaining numerical features
+
+            preprocessed_data = pd.concat([data.drop(categorical_features, axis=1), encoded_df], axis=1)
+
+            # Separate features and target variable
+
+            X = preprocessed_data.drop(['employeeid', 'employeename', 'positive_feedback'], axis=1)
+
+            y = preprocessed_data['positive_feedback']
+
+            # Split the data into training and testing sets
+
+            X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+            # Create a logistic regression model
+
+            model = LogisticRegression()
+
+            # Train the model
+
+            model.fit(X_train, y_train)
+
+            # Make predictions on the test set
+
+            y_pred = model.predict(X_test)
+
+            # Evaluate the model
+
+            accuracy = accuracy_score(y_test, y_pred)
+
+            return render_template('result.html', accuracy=accuracy)
+
+    return render_template('index.html')
+
+if __name__ == '__main__':
+
+    app.run(debug=True)
