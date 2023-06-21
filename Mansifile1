@@ -1,0 +1,41 @@
+import pandas as pd
+
+from sklearn.model_selection import train_test_split
+
+from sklearn.tree import DecisionTreeClassifier
+
+# Load the data into a pandas DataFrame
+
+data = pd.read_csv('employee_data.csv')
+
+# Split the data into input (X) and output (y) variables
+
+X = data[['empname']]
+
+y = data[['skills', 'teamnames', 'projecthistory']]
+
+# Split the data into training and testing sets
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Initialize the decision tree classifier
+
+clf = DecisionTreeClassifier()
+
+# Train the model
+
+clf.fit(X_train, y_train)
+
+# Evaluate the model
+
+accuracy = clf.score(X_test, y_test)
+
+print("Model accuracy:", accuracy)
+
+# Example usage: Predicting skills, team name, and project for a new employee
+
+new_employee_name = 'John'
+
+prediction = clf.predict([[new_employee_name]])
+
+print("Predicted skills, team name, and project for", new_employee_name, ":", prediction)
