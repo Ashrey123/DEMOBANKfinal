@@ -1,0 +1,58 @@
+
+import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.impute import SimpleImputer
+
+
+data = pd.read_csv('D:\\python\\final.csv')
+
+value = data['Performance_Ratings']
+converted_value = str(value)
+
+print(converted_value)
+data['text'] = data['Employee_Name'] \
+    + ' ' + data['Skills'] + \
+    ' ' + converted_value + ' ' + data['Reviews']
+data['output'] = data['Team_Names']
+
+
+X = data['text']
+y = data['output']
+
+
+imputer = SimpleImputer(strategy='most_frequent')
+y = imputer.fit_transform(y.values.reshape(-1, 1))
+
+
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.5, random_state=42)
+
+
+vectorizer = CountVectorizer()
+X_train_vectorized = vectorizer.fit_transform(X_train)
+
+
+model = LogisticRegression()
+model.fit(X_train_vectorized, y_train)
+
+
+X_test_vectorized = vectorizer.transform(X_test)
+accuracy = model.score(X_test_vectorized, y_test)
+print("accuracy", accuracy)
+
+while True:
+    user_input = input("Enter the skills (or 'q' to quit): ")
+
+    if user_input.lower() == 'q':
+        break
+
+    user_input_vectorized = vectorizer.transform([user_input])
+
+    prediction = model.predict(user_input_vectorized)
+
+    print("Predicted Team Name :", prediction[0])
+
+print("Exiting the program.")
+
