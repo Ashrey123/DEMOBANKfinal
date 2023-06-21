@@ -1,0 +1,65 @@
+import openai
+
+# Set up OpenAI API credentials
+
+openai.api_key = 'YOUR_API_KEY'
+
+# Define the employee names
+
+employee_names = [
+
+    'John',
+
+    'Sarah',
+
+    'Mike',
+
+    'Lisa'
+
+]
+
+# Prepare the prompt
+
+prompt = "Employee Name:"
+
+# Generate the completion using OpenAI's Chat API
+
+response = openai.Completion.create(
+
+    engine='text-davinci-003',
+
+    prompt=prompt,
+
+    max_tokens=100,
+
+    n=1,
+
+    stop=None,
+
+    temperature=0.7
+
+)
+
+# Extract the predicted skills, team names, and projects
+
+predictions = response.choices[0].text.strip().split("\n")
+
+# Print the predictions for each employee name
+
+for i, employee_name in enumerate(employee_names):
+
+    skills = predictions[i].split(':')[1].strip()
+
+    team_name = predictions[i + len(employee_names)].split(':')[1].strip()
+
+    project = predictions[i + len(employee_names) * 2].split(':')[1].strip()
+
+    print("Predicted skills, team name, and project for", employee_name, ":")
+
+    print("Skills:", skills)
+
+    print("Team Name:", team_name)
+
+    print("Project:", project)
+
+    print()
