@@ -1,0 +1,64 @@
+
+import pandas as pd
+
+from sklearn.feature_extraction.text import CountVectorizer
+
+from sklearn.preprocessing import LabelEncoder
+
+from sklearn.model_selection import train_test_split
+
+from sklearn.tree import DecisionTreeClassifier
+
+# Load the data from a CSV file
+
+data = pd.read_csv('employee_data.csv')
+
+# Preprocess the data
+
+features = data[['skills', 'empname']]
+
+target = data['teamnames']
+
+# Encode categorical features
+
+encoder = LabelEncoder()
+
+features['skills'] = encoder.fit_transform(features['skills'])
+
+# Vectorize text-based features
+
+vectorizer = CountVectorizer()
+
+features['empname'] = vectorizer.fit_transform(features['empname'])
+
+# Split the data into training and testing sets
+
+X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2, random_state=42)
+
+# Train the decision tree classifier
+
+model = DecisionTreeClassifier()
+
+model.fit(X_train, y_train)
+
+# Take user input
+
+user_input = input("Enter skills or employee name: ")
+
+# Preprocess user input
+
+user_input_skills = encoder.transform([user_input])
+
+user_input_name = vectorizer.transform([user_input])
+
+# Make a prediction
+
+team_prediction = model.predict([user_input_skills, user_input_name])
+
+# Decode the predicted team name
+
+predicted_team = encoder.inverse_transform(team_prediction)
+
+# Output the predicted team name
+
+print("Predicted team name:", predicted_team)
